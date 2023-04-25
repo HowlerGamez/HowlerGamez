@@ -1,0 +1,154 @@
+<!--click "!"" and select it in drop down to create basic starter of html documents,
+provides all the tags and things necessary to create document.-->
+<!DOCTYPE html>
+<!--start of script in html-->
+<html lang="en">
+    <!--Matthew Moore - CSC102-->
+<!--website link header-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title tag for the website link, don't make too long-->
+    <title>UAT Space Program</title>
+    <!--anything in the CSS file will be included in this file as well-->
+    <link rel="stylesheet" href="Space Program Main CSS.css">
+    <!--anything in the Javascript file will be included in this file as well-->
+    <script src="Space Program JS Code week 9.js"></script>
+</head>
+
+<!--anything in the body section is what is actually seen by the viewer on the webpage-->
+<body>
+    <!--center alignment for everything in body section, centers it to page-->
+    <center>
+        <!--nav divider begins-->
+    <div class="content" id="topnav">
+        <!--website header-->
+            <header>
+                <!-- top navigation bar for website-->
+                <nav>
+                    <!--image called HomeIcon is referenced in nav bar, links to the Space Program Home page-->
+                    <a class="HomeIcon" href="Space_Program_Home.html" title="Home"><img src="home_icon.png"></a>
+                    <!--image called HomeIcon is referenced in nav bar, links to the Space Program Information page-->
+                    <a class="SpaceInfo" href="Space_Program_Info.html" title="UATSpaceInfo"><img src="Info_icon.png"></a>
+                    <!--image called HomeIcon is referenced in nav bar, links to the Space Program Carousel page-->
+                    <a class="CarouselIcon" href="carousel.html" title="Carousel"><img src="Carousel_icon.png"></a>
+                    <!--image called HomeIcon is referenced in nav bar, links to the Space Program Data Table page-->
+                    <a class="DataIcon" href="Space_Program_Data_Tables.html" title="Data"><img src="Data_icon.png"></a>
+                    <!--image called BoardIcon is referenced in nav bar, links to the UAT Board and Requirements page-->
+                    <a class="Boards" href="UAT Boards and Requirements.html" title="Boards"><img src="Boards_icon.png"></a>
+                    <!--image break in between links, decoration-->
+                    <a class="MovingRocket"><img src="MovingRocket_icon.png"></a>
+                    <!--image called HomeIcon is referenced in nav bar, links to the Space Program Member Login page-->
+                    <a class="LoginIcon" href="Space_Program_Membership_Login.html" title="Login"><img src="login_icon.png"></a>
+                <!--second divider underneath nav divider-->
+                <div class="minicontent" id="topnav2">
+                    <!--paragraph inside divider with name and major-->
+                    <p>Matthew Moore || Game Design</p>
+                <!--end of div-->
+                </div>
+            <!--end of navigation bar-->
+            </nav>
+        <!--end of header-->
+        </header>
+    <!--end of content divider-->
+    </div>
+    <!--break between header and h1-->
+    <br><br>
+            <!--page header/subtitle introduction, only one h1 tag on a webpage-->
+            <h1>UAT Space Program Information and Countdown</h1>
+            <br>
+            <!--image addition, src=source followed by file name (click desired file in drop down menu),
+                alt tag is what the viewers will see-->
+                <img src="UATspaceLogo-1.jpg" alt="UAT Space Logo" />
+                <!--break-->
+                <br><br>
+                <!--paragraph calling the ID "output" which is later defined-->
+                <p id="output"></p>
+                <!--script calling from Javascript to perform the time-->
+                <script>
+                    // When the page loads, it runs this looping function that tells the locale time. 
+                    window.onload = function(){
+
+                        // Timer runs every second and calls the getTime() function
+                        let timer = setInterval(getTime, 1000);
+                        //getTime() gathers the data for the current time in the local area of the person using the website,
+                        //and performs the following lines of data
+                        function getTime(){
+                            // Get the current time and format it as a string
+                            let currentTime = new Date();
+                            let time = currentTime.toLocaleTimeString();
+                            // Update the output with the current time and remaining seconds until launch
+                            document.getElementById("output").innerHTML = "Current time: " + time;
+    
+                        }
+                    }
+                //end of javascript
+                </script>
+            
+            <!-- User's name and program ID Number are shown on main page of website when it actually works, paragraph text -->
+            <p>
+                <!--<span id="userNameBadge"></span>-->
+                Welcome to the University of Advancing Technology's Space Program!
+            </p>
+            
+            <!--page paragraph tag, provides in text information for the viewer-->
+            <p>
+                Are you interested in the progress of reaching to the stars that we call space?
+                If so, you better prepare for take-off!!!
+            </p>
+            
+            <!--button input (click button, onclick reaction = 
+                javascript alert that shows when the button is clicked)-->
+                <input type="button" Value="Check this out!" onclick="alert('Are you ready to have your mind blown?!?');" />
+                
+                <!-- Countdown visualization on main page -->
+                <p> Countdown: <span id="Countdown"></span> </p>
+                
+                <!-- Creates a start button for when you enter website that will start the Countdown upon clicking it
+                    using the startButtonClick function created in the JS Code -->
+                    <button type="button" onclick="startButtonClick();" id="buttonStart">Start Countdown</button>
+                    
+                    <!-- Creates a stop button that will end the Countdown upon clicking it
+                        using the stopButtonClick function created in the JS Code -->
+                        <button type="button" onclick="stopButtonClick();" id="buttonEnd" disabled="true">Stop Countdown</button>
+                        <br>
+                        <!--calls from javascript -->
+                        <script> 
+                            //takes user info gathered from the Javascript and inputs it to the userInfo variable
+                            //takes the variables and documents it under the name userNameBadge
+                            var userInfo = getUserInput();
+                            document.getElementById("userNameBadge").innerHTML = userInfo;
+                        //end of javascript
+                        </script>
+                        <!--break-->
+                        <br><br>
+                    <!--audio functionality at the bottom of webpage, contains settings and controls-->
+                    <audio controls>
+                        <!--audio source and time length are accessed-->
+                        <source src="space-atmospheric-background-124841.mp3">
+                    <!--end of audio-->
+                    </audio>
+                    <!--giant break-->
+                    <br><br><br><br><br><br><br>
+                    <!--end of divider(s)-->
+                    </div>
+                </div>
+            <!--end of center alignment-->
+            </center>
+      <!--beginning of footer divider-->
+      <div class="footer">
+        <!--break-->
+        <br>
+          <!--reference to website where audio was found, text to give credit to composer-->
+          <a href="https://pixabay.com/music/ambient-space-atmospheric-background-124841/">Music by lvymusic from Pixabay</a>
+          <!--paragraph text with school name, address, and my email-->
+          <p>University of Advancing Technology || 2627 West Baseline Rd., Tempe, AZ 85283 || freshhowler@gmail.com</p>
+        <!--break-->
+        <br>
+      <!--end of footer-->
+      </div>
+<!--end of body section, nothing after this will be seen by webpage viewers-->
+</body>
+<!--end of script-->
+</html>
